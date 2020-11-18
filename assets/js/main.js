@@ -1,15 +1,30 @@
-var userMail = prompt("Inserisci la tua e-mail");
-var emails = ["serena.rossi@libero.it", "mario.rossi@outlook.it", "giacomo.rossi@gmail.com"];
+//Esercizio email
+var userMail = prompt("Inserisci la tua email")
 console.log(userMail);
-console.log([emails]);
-console.log(userMail[emails]);
+var emails = ["serena.rossi@libero.it", "mario.rossi@outlook.it", "giacomo.rossi@gmail.com"]
+var mailTrovata = false;
 
-var numeroUtente = Number(prompt("Scegli un numero da 1 a 6"));
-var numeroSistema = Math.floor(Math.random() * 6) + 1 ;
-if (numeroUtente > numeroSistema) {
-  alert("HAI VINTO!");
-} else if (numeroUtente < numeroSistema) {
-  alert("RITENTA ANCORA!");
+for (var i = 0; i < emails.length; i++ ) {
+   var email = emails[i];
+
+   if (email === userMail) {
+       mailTrovata = true;
+   }
+}
+
+if (mailTrovata) {
+   console.log("entra pure");
 } else {
-  alert("SCELTA NON VALIDA");
+   console.log("accesso negato");
+}
+
+//Esercizio dadi
+var player = Math.floor(Math.random() * 6) + 1;
+var sistema = Math.floor(Math.random() * 6) + 1;
+if (player > sistema) {
+  console.log("HAI VINTO!");
+} else if (player < sistema) {
+  console.log("RITENTA ANCORA!");
+} else {
+  console.log("PAREGGIO!");
 }
